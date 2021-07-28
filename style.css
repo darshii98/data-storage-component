@@ -1,0 +1,230 @@
+/* ////////////////INIT////////////////// */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  --neutral-pale-blue: hsl(243, 100%, 93%);
+  --neutral-gray-blue: hsl(229, 7%, 55%);
+  --neutral-blue-dk: hsl(228, 56%, 26%);
+  --neutral-blue-dkr: hsl(229, 57%, 11%);
+
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+}
+
+.section-center {
+  min-height: 97vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--neutral-blue-dkr);
+  background-image: url(./images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  background-position: bottom 0 left 0;
+  padding: 0 1rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 950px;
+}
+
+/* ////////////////LEFT LOGO BOX////////////////// */
+
+.left-box {
+  background-color: var(--neutral-blue-dk);
+  margin-right: 2rem;
+  width: 40%;
+  padding: 3rem;
+  border-radius: 10px;
+  border-top-right-radius: 110px;
+}
+
+.icons {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+}
+
+.icon {
+  margin-right: 1.5rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  background-color: var(--neutral-blue-dkr);
+}
+
+/* ////////////////RIGHT STATUS BOX////////////////// */
+
+.right-box {
+  background-color: var(--neutral-blue-dk);
+  color: white;
+  width: 60%;
+  padding: 3rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.right-box p {
+  color: var(--neutral-gray-blue);
+  font-weight: 400;
+  letter-spacing: 0.07rem;
+}
+
+.right-box span {
+  color: var(--neutral-pale-blue);
+  font-weight: 700;
+}
+
+.status {
+  margin-top: 1.5rem;
+}
+
+.status-bar {
+  height: 1.3rem;
+  margin-bottom: 0.6rem;
+  border-radius: 30px;
+  padding: 0.1rem;
+  background-color: hsl(229, 57%, 17%);
+}
+
+.status-percentage {
+  height: 100%;
+  width: 81.5%;
+  background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: 30px;
+  padding: 0.1rem 0.12rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.ball {
+  height: 0.9rem;
+  width: 0.9rem;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.data p {
+  color: var(--neutral-pale-blue);
+  font-weight: 700;
+}
+
+.tooltip-box {
+  background-color: white;
+  position: absolute;
+  top: -30%;
+  right: 10%;
+  padding: 1rem;
+  width: 13rem;
+  border-radius: 10px;
+}
+
+.tooltip-box::after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 0rem;
+  width: 0rem;
+  border: 1.5rem solid transparent;
+  border-right: 1.5rem solid white;
+  bottom: -1.5rem;
+  right: 0;
+}
+
+.tooltip-box p {
+  color: var(--neutral-blue-dkr);
+  font-weight: 700;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip-box span {
+  color: var(--neutral-gray-blue);
+  font-size: 13px;
+  margin-left: 0.5rem;
+}
+
+/* ////////////////ATTRIBUTION////////////////// */
+
+.attribution {
+  min-height: 3vh;
+  text-align: center;
+  background-color: hsl(229, 57%, 18%);
+  color: var(--neutral-gray-blue);
+  padding: 0 1rem;
+  font-size: 14px;
+  padding-top: 0.4rem;
+}
+.frontend-mentor,
+.author {
+  text-decoration: none;
+  color: var(--neutral-pale-blue);
+  font-size: 14px;
+}
+
+.author {
+  border: 1px solid transparent;
+  transition: all 0.25s;
+  font-size: 14px;
+}
+
+.author:active,
+.author:hover {
+  border-bottom: 1px solid var(--neutral-pale-blue);
+}
+
+/* ////////////////MEDIA QUERY////////////////// */
+
+@media only screen and (max-width: 720px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .section-center {
+    background-image: url(./images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: top 0 left 0;
+  }
+
+  .left-box,
+  .right-box {
+    width: 100%;
+  }
+
+  .left-box {
+    margin-right: 0rem;
+    margin-bottom: 2rem;
+  }
+
+  .tooltip-box {
+    bottom: -28%;
+    top: 84%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 50%;
+  }
+
+  .tooltip-box::after {
+    border: 1.5rem solid transparent;
+  }
+}
